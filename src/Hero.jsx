@@ -4,6 +4,7 @@ import inputbg from '/bg-shorten-mobile.svg'
 import brand from '/icon-brand-recognition.svg'
 import record from '/icon-detailed-records.svg'
 import custom from '/icon-fully-customizable.svg'
+import useIsTabVisible from './tab'
 import { useMediaQuery } from '@material-ui/core'
 const Card=({item,ind,last=false})=>{
     let orderclass=''
@@ -31,6 +32,7 @@ const Card=({item,ind,last=false})=>{
 }
 const UrlCard=({item})=>{
     const [iscopy, setiscopy] = useState('Copy')
+    const visible=useIsTabVisible(setiscopy)
     const media=useMediaQuery('(min-width:600px)')
     console.log(item)
     return (
